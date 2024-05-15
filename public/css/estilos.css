@@ -1,0 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+dialog{
+    border:1px solid #044170;
+    border-radius:10px;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+}

@@ -1,0 +1,8 @@
+#evita que nos muestre el directorio completo de nuestro proyecto al digitar la url en el servidor local
+#mostrando solo el contenido de la carpeta public
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    # Redirigir las solicitudes a public/
+    RewriteRule ^$ public/ [L]
+    RewriteRule (.*) public/$1 [L]
+</IfModule>
