@@ -1,7 +1,11 @@
 <?php
     class Conexion{
         static public function infoBaseDatos(){
-            $infoDb=array('database'=>'indicadores','user'=>'root','password'=>'');
+            $infoDb=array(
+                'database'=>'indicadores',
+                'user'=>'root',
+                'password'=>''
+            );
             return $infoDb;
         }
 
