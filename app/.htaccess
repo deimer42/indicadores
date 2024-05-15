@@ -1,0 +1,2 @@
+#evita el acceso a la carpeta raiz, en este caso app
+Options -Indexes
