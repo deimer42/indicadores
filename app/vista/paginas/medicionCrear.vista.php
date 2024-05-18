@@ -6,13 +6,15 @@
 
     $tituloPagina='Indicadores';
     $tabla = "indicadores";
-    $select = "id_indicador, nombre_indicador";
-    $where = null;
-    $equalTo = null;
+    $select = "id_indicador,nombre_indicador";
+    $where = "id_empresa_indicador";
+    $equalTo =$user_empresa;
+    $groupBy=null;
+    $orderBy=null;
     $orderBy = "id_indicador";
     $orderMode = "ASC";
-
-    $consultaNombreMediciones = GetController::obtenerDatos($tabla, $select, $orderBy, $orderMode);
+    $limite=30;
+    $consultaNombreMediciones = GetController::obtenerDatosFiltro($tabla, $select, $where, $equalTo, $groupBy, $orderBy, $orderMode, $limite);
     require_once '../app/vista/secciones/header.php';
 ?>
 
@@ -53,8 +55,8 @@
                 $id_indicador=$filas->id_indicador;
                 $tabla2="mediciones";
                 $select2="*";
-                $where2="fecha_medicion,id_indicador_medicion,id_usuario_medicion";
-                $equalTo2=$urlArray[3].",".$id_indicador.",".$id_usuario; //$urlArray[3] contiene la fecha introducida en la url Ej: http://indicadores.com/mediciones/crear/2024-05-13
+                $where2="fecha_medicion,id_indicador_medicion,id_usuario_medicion,id_empresa_medicion";
+                $equalTo2=$urlArray[3].",".$id_indicador.",".$id_usuario.",".$user_empresa; //$urlArray[3] contiene la fecha introducida en la url Ej: http://indicadores.com/mediciones/crear/2024-05-13
                 $groupBy=null;
                 $orderBy2="id_medicion";
                 $orderMode2="DESC";
@@ -86,6 +88,11 @@
                         </tr>';
                 }
             }
+        }else{
+            echo '
+            <tr>
+                <td colspan="2">Tu empresa todavia no tiene indicadores parametrizados. Contacta al administrador</td>
+            </tr>';
         }
     ?>
 </table>

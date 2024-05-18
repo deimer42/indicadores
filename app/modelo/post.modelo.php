@@ -3,8 +3,8 @@
     class PostModel{
         static public function inserciones($table, $data){
             $conectar=Conexion::conectar();
-            
-            //1. Obtener las columnas enviadas por el array $datos
+
+            //1.2. Obtener las columnas enviadas por el array $datos
             $columnas="";
             $valores="";
             foreach($data as $key=>$value){

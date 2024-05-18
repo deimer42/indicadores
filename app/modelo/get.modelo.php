@@ -1,6 +1,5 @@
 <?php
     require_once 'conexion.modelo.php';
-    
     class GetModel{
         static public function obtenerDatos($tabla, $select, $orderBy, $orderMode){
             $conectar=Conexion::conectar();

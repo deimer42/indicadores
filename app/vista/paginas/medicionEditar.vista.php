@@ -7,8 +7,8 @@
     $tituloPagina='Editar Medicion';
     $tabla2="mediciones";
     $select2="*";
-    $where2="id_indicador_medicion,id_usuario_medicion";
-    $equalTo2=$urlArray[3].",".$id_usuario; //$urlArray[3] contiene el id del registro
+    $where2="id_indicador_medicion,id_usuario_medicion,id_empresa_medicion";
+    $equalTo2=$urlArray[3].",".$id_usuario.",".$user_empresa; //$urlArray[3] contiene el id del registro
     $groupBy=null;
     $orderBy2="id_medicion";
     $orderMode2="DESC";

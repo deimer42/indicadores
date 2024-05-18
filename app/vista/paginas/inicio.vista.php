@@ -7,8 +7,8 @@
     $tituloPagina='Indicadores por dia';
     $tabla="mediciones";
     $select="id_medicion,fecha_medicion";
-    $where="id_usuario_medicion,ano,mes";
-    $equalTo=$id_usuario.",".$ano_trabajo.",".$mes_trabajo;
+    $where="id_usuario_medicion,ano,mes,id_empresa_medicion";
+    $equalTo=$id_usuario.",".$ano_trabajo.",".$mes_trabajo.",".$user_empresa;
     $groupBy="fecha_medicion";
     $orderBy="fecha_medicion";
     $orderMode="DESC";

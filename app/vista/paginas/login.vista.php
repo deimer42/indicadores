@@ -126,6 +126,8 @@
                     echo '<div class="alert alert-danger" role="alert">Credenciales incorrectas</div>';
                 }elseif(isset($urlArray[2]) && $urlArray[2]=='notsession'){
                     echo '<div class="alert alert-warning" role="alert">Primero tienes que iniciar sesion</div>';
+                }elseif(isset($urlArray[2]) && $urlArray[2]=='blocked'){
+                    echo '<div class="alert alert-danger" role="alert">Tu usuario se encuentra bloqueado. Contacta al administrador</div>';
                 }
             ?>
             <form class="login-form" action="<?php echo $sistema['host'].'login'; ?>" method="POST">

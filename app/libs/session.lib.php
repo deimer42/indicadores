@@ -71,7 +71,7 @@
     $usuario = $_SESSION['MM_Username'];
 
     $tabla="usuarios";
-    $select="id_usuario,nombre_usuario,ano_trabajo,mes_trabajo,dia_trabajo";
+    $select="id_usuario,nombre_usuario,ano_trabajo,mes_trabajo,dia_trabajo,id_empresa_usuario";
     $where="usuario";
     $equalTo=$usuario;
 
@@ -88,9 +88,13 @@
             $dia_trabajo=$userConfigs->dia_trabajo;
             $mes_trabajo=$userConfigs->mes_trabajo;
             $ano_trabajo=$userConfigs->ano_trabajo;
+            $user_empresa=$userConfigs->id_empresa_usuario;
         }
         $sesion=array(
             "fecha_sesion"=>$ano_trabajo.'-'.$mes_trabajo,
-            "fecha_sesion2"=>$ano_trabajo.'-'.$mes_trabajo.'-'.$dia_trabajo //con esta fecha (la de inicio de sesion) Se crean las mediciones en el dia elegido.
+            "fecha_sesion2"=>$ano_trabajo.'-'.$mes_trabajo.'-'.$dia_trabajo, //con esta fecha (la de inicio de sesion) Se crean las mediciones en el dia elegido.
+            "user_empresa"=>$user_empresa
         );
     }
+
+    

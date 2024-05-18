@@ -14,6 +14,7 @@
             "mes"=>$mes_trabajo,
             "id_indicador_medicion"=>Limpiar($_POST['let4']),
             "id_usuario_medicion"=>$id_usuario,
+            "id_empresa_medicion"=>$user_empresa,
             "meta_medicion"=>Limpiar($_POST['let1']),
             "resultado_dia_medicion"=>Limpiar($_POST['let2']),
             "porcentaje_logro_medicion"=>Limpiar($_POST['let3'])

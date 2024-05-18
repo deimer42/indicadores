@@ -13,7 +13,7 @@
             "usuario"=>Limpiar($_POST['let2']),
             "contrasena_usuario"=>$encryptPass,
             "rol_usuario"=>Limpiar($_POST['let4']),
-            "empresa_usuario"=>Limpiar($_POST['let5']),
+            "id_empresa_usuario"=>Limpiar($_POST['let5']),
             "estado_usuario"=>"activo"
         );
 

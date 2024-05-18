@@ -2,16 +2,18 @@
     class Conexion{
         static public function infoBaseDatos(){
             $infoDb=array(
-                'database'=>'indicadores',
-                'user'=>'root',
-                'password'=>''
+                'hostBd'=>"localhost",
+                'database'=>"indicadores",
+                'user'=>"root",
+                'password'=>""
             );
             return $infoDb;
         }
 
         static public function conectar(){
             try{
-                $link=new PDO('mysql:host=localhost; dbname='.Conexion::infoBaseDatos()['database'], Conexion::infoBaseDatos()['user'], Conexion::infoBaseDatos()['password']);
+                $infoDb = Conexion::infoBaseDatos();
+                $link=new PDO('mysql:host='.$infoDb['hostBd'].'; dbname='.$infoDb['database'], $infoDb['user'], $infoDb['password']);
                 $link->exec("SET NAMES utf8");
             }catch(PDOException $e){
                 die("Error: ".$e->getMessage());
@@ -19,5 +21,4 @@
             return $link;
         }
     }
-
     

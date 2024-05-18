@@ -56,8 +56,10 @@
         <td>Empresa</td>
         <td>
             <select name="empresa_usuario" id="empresa_usuario" class="form-control">
-                <option value="1" selected>Disprolacteos: Carnicos</option>
-                <option value="2">Disprolacteos: Nutresa</option>
+                <option value="" selected>Seleccione...</option>
+                <option value="1">Disprolacteos: Carnicos</option>
+                <option value="2">Disprolacteos: Comercial Nutresa</option>
+                <option value="3">Disprolacteos: Meals Colombia</option>
             </select>
         </td>
     </tr>

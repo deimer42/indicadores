@@ -1,9 +1,11 @@
 <?php
+    require_once '../app/libs/limpiarcaracteres.lib.php';
     class Rutas{
         public function index(){
             $url=$_SERVER['REQUEST_URI'];
             $urlArray=explode("/",$url);
-            $urlArray=array_filter($urlArray);
+            $urlArray=array_filter($urlArray); //eliminar elementos vacíos del array $urlArray. si la URL fuera "/usuarios/crear/", después de dividirla con explode("/", $url), obtendríamos un array como ["", "usuarios", "crear", ""]
+            $urlArray=Limpiar($urlArray);
             //print_r($urlArray);
 
             if(!empty($urlArray)){
