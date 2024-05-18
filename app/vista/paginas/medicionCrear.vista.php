@@ -73,7 +73,7 @@
                         echo '
                             <td class="text-end">'.number_format($filas2->meta_medicion).'</td>
                             <td class="text-end">'.number_format($filas2->resultado_dia_medicion).'</td>
-                            <td class="text-center"><b>'.number_format($filas2->porcentaje_logro_medicion).'%</b></td>
+                            <td class="text-center"><b>'.number_format($filas2->porcentaje_logro_medicion, 1, '.', ',').'%</b></td>
                             <td class="text-center"><a id="editar" name="'.$id_indicador.'" href="'.$sistema['host'].'mediciones/editar/'.$id_indicador.'" class="btn btn-warning p-1"><img src="'.$sistema['host'].'public/img/editar.png" style="width:25px;"></a></td>
                         </tr>';
                     }
@@ -109,6 +109,14 @@
     <table>
         <input type="hidden" name="id_indicador_medicion" id="id_indicador_medicion">
         <input type="hidden" name="fecha_medicion" id="fecha_medicion" value="<?php echo $urlArray[3]; ?>">
+        <form name=Calc>
+            <tr>
+                <td colspan="2">
+                <input type="text" name="pantalla" size="20" placeholder="Calculadora" style="background-color:#044170; color:white; border:0px; padding:3px; width:100%; height:40px; margin:3px;" />
+                    <input type="button" style="width:100%; height:40px; margin:3px;"  value="="  name="DoIt" onclick = "Calc.pantalla.value = eval(Calc.pantalla.value)">
+                </td>
+            </tr>
+        </form>
         <tr>
             <td>Meta</td>
             <td><input type="number" name="meta_medicion" id="meta_medicion" onchange="const porcent=new Mediciones(); porcent.calcularPorcentaje();" placeholder="Escribe..." class="form-control"></td>
@@ -119,7 +127,7 @@
         </tr>
         <tr>
             <td>%</td>
-            <td><input type="number" readonly name="porcentaje_logro_medicion" id="porcentaje_logro_medicion" placeholder="Escribe..." class="form-control"></td>
+            <td><input type="text" name="porcentaje_logro_medicion" id="porcentaje_logro_medicion" placeholder="Escribe..." class="form-control"></td>
         </tr>
         <tr>
             <td colspan="2" class="text-center p-3"><button type="button" class="btn btn-primary" onclick="const medicion=new Mediciones(); medicion.crearMedicion(); return;">Guardar</button></td>

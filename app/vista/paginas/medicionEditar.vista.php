@@ -19,6 +19,12 @@
     require_once '../app/vista/secciones/header.php';
 ?>
     
+    <style>
+        .inputcentrado{
+            text-align:center;
+        }
+    </style>
+
     <h2 class="text-center p-4">Reporte cierre diario de ventas</h2>
     <h5><a href="<?php echo $_SERVER['HTTP_REFERER']; ?>#<?php echo $urlArray[3]; ?>"><img src="<?php echo $sistema['host']; ?>public/img/atras.png" width="20px" alt=""></a> Editar medicion</h5>
     <div id="avisosDesdeResponse2" class="text-center"></div>
@@ -49,17 +55,25 @@
             </th>
         </tr>
         <input type="hidden" value="<?php echo $mostrar->id_medicion; ?>" id="id_medicion">
+        <form name=Calc>
+            <tr>
+                <td colspan="2">
+                    <input type="text" name="pantalla" size="20" placeholder="Calculadora" style="background-color:#044170; color:white; border:0px; padding:3px; width:100%; height:40px; margin:3px;" />
+                    <input type="button" style="width:100%; height:40px; margin:3px;"  value="="  name="DoIt" onclick = "Calc.pantalla.value = eval(Calc.pantalla.value)">
+                </td>
+            </tr>
+        </form>
         <tr>
             <td>Meta</td>
             <td><input type="number" value="<?php echo $mostrar->meta_medicion; ?>" id="meta_medicion" onchange="const porcent=new Mediciones(); porcent.calcularPorcentaje();" placeholder="Escribe..." class="form-control text-end"></td>
         </tr>
         <tr>
             <td>Resultado</td>
-            <td><input type="number" value="<?php echo $mostrar->resultado_dia_medicion; ?>" id="resultado_dia_medicion" onchange="const porcent=new Mediciones(); porcent.calcularPorcentaje();" placeholder="Escribe..." class="form-control text-end"></td>
+            <td><input type="number" style="text-align:center;" value="<?php echo $mostrar->resultado_dia_medicion; ?>" id="resultado_dia_medicion" onchange="const porcent=new Mediciones(); porcent.calcularPorcentaje();" placeholder="Escribe..." class="inputcentrado form-control text-end"></td>
         </tr>
         <tr>
             <td>%</td>
-            <td><input type="number" value="<?php echo $mostrar->porcentaje_logro_medicion; ?>" id="porcentaje_logro_medicion" placeholder="Escribe..." class="form-control text-end"></td>
+            <td><input type="text" value="<?php echo $mostrar->porcentaje_logro_medicion; ?>" id="porcentaje_logro_medicion" placeholder="Escribe..." class="form-control text-end"></td>
         </tr>
         <tr>
             <td colspan="2" class="text-center p-3"><button type="button" class="btn btn-primary" onclick="const medicion=new Mediciones(); medicion.editarMedicion(); return false;">Actualizar</button></td>
