@@ -71,7 +71,7 @@
                         echo '
                             <td class="text-end">'.number_format($filas2->meta_medicion).'</td>
                             <td class="text-end">'.number_format($filas2->resultado_dia_medicion).'</td>
-                            <td class="text-center"><b>'.number_format($filas2->porcentaje_logro_medicion).'%</b></td>
+                            <td class="text-center"><b>'.number_format($filas2->porcentaje_logro_medicion, 1, ',','.').'%</b></td>
                         </tr>';
                     }
                 }else{

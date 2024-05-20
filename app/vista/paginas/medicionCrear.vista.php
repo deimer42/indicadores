@@ -7,8 +7,8 @@
     $tituloPagina='Indicadores';
     $tabla = "indicadores";
     $select = "id_indicador,nombre_indicador";
-    $where = "id_empresa_indicador";
-    $equalTo =$user_empresa;
+    $where = "id_empresa_indicador,ano_indicador,mes_indicador";
+    $equalTo =$user_empresa.",".$ano_trabajo.",".$mes_trabajo;
     $groupBy=null;
     $orderBy=null;
     $orderBy = "id_indicador";
@@ -112,18 +112,18 @@
         <form name=Calc>
             <tr>
                 <td colspan="2">
-                <input type="text" name="pantalla" size="20" placeholder="Calculadora" style="background-color:#044170; color:white; border:0px; padding:3px; width:100%; height:40px; margin:3px;" />
+                <input type="text" name="pantalla" size="20" placeholder="Calculadora" style="background-color:#044170; color:white; border:0px; padding:5px; width:100%; font-size:23px; height:auto; margin:3px;" />
                     <input type="button" style="width:100%; height:40px; margin:3px;"  value="="  name="DoIt" onclick = "Calc.pantalla.value = eval(Calc.pantalla.value)">
                 </td>
             </tr>
         </form>
         <tr>
             <td>Meta</td>
-            <td><input type="number" name="meta_medicion" id="meta_medicion" onchange="const porcent=new Mediciones(); porcent.calcularPorcentaje();" placeholder="Escribe..." class="form-control"></td>
+            <td><input type="number" name="meta_medicion" id="meta_medicion" autofocus onkeyup="const porcent=new Mediciones(); porcent.calcularPorcentaje();" placeholder="Escribe..." class="form-control"></td>
         </tr>
         <tr>
             <td>Resultado</td>
-            <td><input type="number" name="resultado_dia_medicion" id="resultado_dia_medicion" onchange="const porcent=new Mediciones(); porcent.calcularPorcentaje();" placeholder="Escribe..." class="form-control"></td>
+            <td><input type="number" name="resultado_dia_medicion" id="resultado_dia_medicion" onkeyup="const porcent=new Mediciones(); porcent.calcularPorcentaje();" placeholder="Escribe..." class="form-control"></td>
         </tr>
         <tr>
             <td>%</td>

@@ -38,7 +38,7 @@ function encriptadoDesencriptado(comando, datoSensible, naturalezaDato) {
 }
 
 // Ejemplo de uso:
-let datoEncriptado = encriptadoDesencriptado('encriptar', 'dato sensible', 'usuario');
+let datoEncriptado = encriptadoDesencriptado('encriptar', 'Deimer Mosquera', 'usuario');
 console.log("Dato encriptado:", datoEncriptado);
 
 let datoDesencriptado = encriptadoDesencriptado('desencriptar', datoEncriptado, 'usuario');

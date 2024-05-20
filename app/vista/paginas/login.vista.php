@@ -6,7 +6,7 @@
 
     if(isset($_POST['btnLogin']) && !empty($_POST['usuario']) && !empty($_POST['contrasena_usuario'])){
         $usuario=Limpiar($_POST['usuario']);
-        $contrasena_usuario=Limpiar($_POST['contrasena_usuario']);
+        $contrasena_usuario=encriptadoDesencriptado('encriptar', Limpiar($_POST['contrasena_usuario']), 'usuario');
         $ano_trabajo=Limpiar($_POST['ano_trabajo']);
         $mes_trabajo=Limpiar($_POST['mes_trabajo']);
         $dia_trabajo=Limpiar($_POST['dia_trabajo']);

@@ -47,7 +47,7 @@
         }else{
             echo '
             <tr>
-                <td colspan="2">Todavia no tienes indicadores guardados en el mes elegido al iniciar sesion. <a href="'.$sistema['host'].'mediciones/crear/'.date('Y-m-d').'">Crea una medicion</a></td>
+                <td colspan="2">Todavia no tienes indicadores guardados en el mes elegido al iniciar sesion. <a href="'.$sistema['host'].'mediciones/crear/'.$sesion["fecha_sesion2"].'">Crea una medicion</a></td>
             </tr>';
         }
     ?>

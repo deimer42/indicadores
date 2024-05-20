@@ -17,7 +17,7 @@
             }
             
             $loginUsername=$usuario;
-            $password=$contrasena_usuario;
+            $password=encriptadoDesencriptado('desencriptar', $contrasena_usuario, 'usuario');
 
             //1. Consultar si existe ese usuario
             $tabla="usuarios";

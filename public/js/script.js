@@ -13,7 +13,7 @@ class Mediciones{
         let v3=document.getElementById('porcentaje_logro_medicion').value;
         let v4=document.getElementById('id_indicador_medicion').value;
         let v5=document.getElementById('fecha_medicion').value;
-        
+
         if(v1.trim()==='' || v4.trim()===''){
             alert('Llene todos los campos');
             return false;
