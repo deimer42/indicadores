@@ -7,8 +7,8 @@
     $tituloPagina='Indicadores';
     $tabla = "indicadores";
     $select = "id_indicador,nombre_indicador";
-    $where = "id_empresa_indicador";
-    $equalTo =$user_empresa;
+    $where = "id_empresa_indicador,ano_indicador,mes_indicador";
+    $equalTo =$user_empresa.",".$ano_trabajo.",".$mes_trabajo;
     $groupBy=null;
     $orderBy=null;
     $orderBy = "id_indicador";
